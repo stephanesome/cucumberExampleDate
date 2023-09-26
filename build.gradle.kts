@@ -5,7 +5,7 @@ plugins {
     application
 }
 
-group = "org.example"
+group = "seg3x02"
 version = "1.0-SNAPSHOT"
 
 repositories {
@@ -14,10 +14,13 @@ repositories {
 
 dependencies {
     testImplementation(kotlin("test"))
+    testImplementation("io.cucumber:cucumber-java8:7.14.0")
+    testImplementation("io.cucumber:cucumber-junit-platform-engine:7.14.0")
 }
 
 tasks.test {
     useJUnitPlatform()
+    systemProperty("cucumber.junit-platform.naming-strategy", "long")
 }
 
 tasks.withType<KotlinCompile> {
