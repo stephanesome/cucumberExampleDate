@@ -116,17 +116,4 @@ class MyDate(year: Int, month: Int, day: Int) {
     override fun toString(): String {
         return yEAR.toString() + "/" + monthName() + "/" + dAY
     }
-
-/*    override fun equals(other: Any?): Boolean {
-        if (other !is Date) return false
-        return yEAR == other.yEAR && mONTH == other.mONTH && dAY == other.dAY
-    }
-
-    override fun hashCode(): Int {
-        var result = yEAR
-        result = 31 * result + mONTH
-        result = 31 * result + dAY
-        result = 31 * result + MONTHNAMES.contentHashCode()
-        return result
-    }*/
 }
