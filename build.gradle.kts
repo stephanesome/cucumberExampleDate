@@ -1,7 +1,5 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-
 plugins {
-    kotlin("jvm") version "1.9.0"
+    kotlin("jvm") version "1.9.23"
     application
 }
 
@@ -15,9 +13,8 @@ repositories {
 dependencies {
     testImplementation(kotlin("test"))
     testImplementation("org.junit.platform:junit-platform-suite:1.10.0")
-    // testImplementation("org.junit.vintage:junit-vintage-engine:5.7.2")
-    testImplementation("io.cucumber:cucumber-java8:7.14.0")
-    testImplementation("io.cucumber:cucumber-junit-platform-engine:7.14.0")
+    testImplementation("io.cucumber:cucumber-java8:7.19.0")
+    testImplementation("io.cucumber:cucumber-junit-platform-engine:7.19.0")
 }
 
 tasks.test {
@@ -25,8 +22,8 @@ tasks.test {
     systemProperty("cucumber.junit-platform.naming-strategy", "long")
 }
 
-tasks.withType<KotlinCompile> {
-    kotlinOptions.jvmTarget = "17"
+kotlin {
+    jvmToolchain(21)
 }
 
 application {
